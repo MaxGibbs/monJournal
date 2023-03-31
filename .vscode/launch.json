@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MonjournalApplication<monjournal>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "java.me.maxgibbs.monjournal.MonjournalApplication",
+            "projectName": "monjournal",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MonjournalApplication<monjournal>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "me.maxgibbs.monjournal.MonjournalApplication",
+            "projectName": "monjournal",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

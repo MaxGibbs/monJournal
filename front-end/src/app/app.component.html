@@ -1,0 +1,90 @@
+<mat-toolbar color="primary">
+    <a>mon Journal</a>
+</mat-toolbar>
+
+<div class="box">
+    <form [formGroup]="articleFormGroup" (ngSubmit)="this.createArticle()">
+        <mat-card class="card-box">
+            <mat-card-title>
+                <h1 class="padding-mat-title">Créer un article</h1>
+            </mat-card-title>
+            <mat-card-content>
+            
+                    <mat-form-field class="input">
+                        <mat-label>title</mat-label>
+                        <input matInput placeholder="Ex. here is my title" 
+                            formControlName="title" name="title" type="text">
+                    </mat-form-field>
+                    <mat-form-field class="input">
+                        <mat-label>content</mat-label>
+                        <textarea matInput placeholder="Ex. here is my article" 
+                            formControlName="content" name="content" type="text"></textarea>
+                    </mat-form-field>
+            
+            </mat-card-content>
+            <mat-card-actions>
+                <button type="submit">submit</button>
+            </mat-card-actions>
+        </mat-card> 
+    </form>
+        
+    <form [formGroup]="rechercheFormGroup" (ngSubmit)="this.findArticleById()">
+        <mat-card class="card-box">
+            <mat-card-title>
+                <h1 class="padding-mat-title">Rechercher un article</h1>
+            </mat-card-title>
+            <mat-card-content>
+                
+                    <mat-form-field class="input">
+                        <mat-label>idArticle</mat-label>
+                        <input matInput formControlName="idArticle" name="idArticle" type="text">
+                    </mat-form-field>
+            
+            </mat-card-content>
+            <mat-card-actions>
+                <button type="submit">find</button>
+            </mat-card-actions>
+        </mat-card>  
+    </form>
+    <mat-card *ngIf="article.id" class="card-box">
+        <mat-card-title>
+            <h1 class="padding-mat-title">{{article.title}}</h1>
+        </mat-card-title>
+        <mat-card-content>
+            <span>{{article.content}}</span>
+        </mat-card-content>
+    </mat-card> 
+    
+    <mat-card class="card-box">
+        <mat-card-title>
+            <h1 class="padding-mat-title">Liste des articles</h1>
+            <div class="end-actions">
+                <mat-icon (click)="findAllArticles()">refresh</mat-icon>
+            </div>
+        </mat-card-title>
+        <mat-card-content>
+            <ng-container *ngFor="let article of articleList; let i = index">
+                <mat-card class="card-box-secondary">
+                    <mat-card-title>
+                        <h2 class="padding-mat-title">{{article.title}}</h2>
+                        <div class="end-actions">
+                            <mat-icon (click)="deleteArticle(article.id)">delete</mat-icon>
+                        </div>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <span>{{article.content}}</span>
+                    </mat-card-content>
+                </mat-card> 
+              </ng-container>
+        </mat-card-content>
+    </mat-card> 
+
+    <div class="footer">
+        <a>mon Journal</a>
+        <a>version 1</a>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,42 @@
+.box {
+    position: absolute;
+    width: 60%;
+    left: 20%;
+    margin-top: 24px;   
+}
+
+.card-box{
+    margin-bottom: 24px;
+    background-color:lightgray;
+}
+
+.card-box-secondary{
+    margin-bottom: 24px;
+    background-color:blanchedalmond;
+}
+
+.padding-mat-title{
+    padding: 8px;
+}
+
+.end-actions {
+    position: absolute;
+    right: 1%; 
+    top: 5%;
+}
+
+.input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.footer {
+    padding-bottom:2px;
+    position: absolute;
+    width: 95%;
+    left: 2.5%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: lighter;
+}
